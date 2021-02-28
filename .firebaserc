@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "angular-projects-9da4c": {
+      "hosting": {
+        "angular-application": [
+          "angular-projects-9da4c"
+        ]
+      }
+    }
+  }
+}

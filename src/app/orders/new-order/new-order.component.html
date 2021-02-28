@@ -1,0 +1,116 @@
+<div class="order h-100">
+  <div class="order-number h-100">
+    <div class="d-flex h-100">
+      <div class="mt-2 p-2 pt-0" [ngClass]="{'w-75': this.carts.length > 0, 'w-100': this.carts.length == 0}">
+        <div class="d-flex justify-content-between">
+          <div class="order-id">Order No. #005</div>
+          <div class="date-time d-flex align-items-center">
+            Mon, 23 Jul 2020, 02:34 AM
+          </div>
+        </div>
+        <div class="row mx-0">
+          <div class="search-box">
+            <input
+              type="text"
+              placeholder="Enter item code.."
+              class="w-100 border border-white rounded"
+            />
+          </div>
+        </div>
+        <div class="row mx-0">
+          <div class="col-12">
+            <div class="d-flex justify-content-end">Page No. 1</div>
+            <div class="row mx-0 product-list">
+              <div class="col-4 text-center" *ngFor="let product of this.productList">
+                <div class="product-image">
+                  <img src="{{product.product_image}}">
+                </div>
+                <div class="product-name">
+                  {{product.product_name}}
+                </div>
+                <div class="add-cart-btn">
+                  <button type="button" class="btn btn-success" (click)="addToCart(product)">Add</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="w-25 cart mt-2 p-2 pt-0" *ngIf="this.carts.length > 0">
+        <div class="add-cart bg-white h-100">
+          <div class="d-flex justify-content-between">
+            <div class="show-cart">Cart</div>
+            <div class="close-icon">
+              <button type="button" class="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </div>
+          <div class="cart-items">
+            <div class="item" *ngFor="let cart of this.carts; let i = index">
+              <div class="cart-image">
+                <img src="{{cart.product_image}}" width="70px">
+              </div>
+              <div class="name-price">
+                <div class="item-name">
+                  {{cart.product_name}}
+                </div>
+                <div class="item-price">
+                  Rs. {{cart.product_price}}
+                </div>
+              </div>
+              <div class="item-quantity d-flex align-items-center">
+                <div class="remove-item">
+                  <button type="button" class="btn btn-default btn-circle" (click)="removeFromCart(i)">
+                    -
+                  </button>
+                </div>
+                <div class="quantity">
+                    {{cart.product_quantity}}
+                </div>
+                <div class="add-item">
+                  <button type="button" class="btn btn-default btn-circle" (click)="addFromCart(i)">
+                    +
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="payment" *ngIf="this.carts.length > 0">
+            <div class="subtotal d-flex align-items-cente justify-content-between">
+              <div class="label">
+                Sub Total
+              </div>
+              <div class="amount">
+               Rs. {{this.subtotal}}
+              </div>
+            </div>
+            <div class="tax d-flex align-items-center justify-content-between">
+              <div class="label">
+                Tax
+              </div>
+              <div class="amount">
+                Rs. {{this.tax}}
+              </div>
+            </div>
+            <div class="total d-flex align-items-center justify-content-between">
+              <div class="label">
+                Total
+              </div>
+              <div class="amount">
+                Rs. {{this.total}}
+              </div>
+            </div>
+            <div class="checkout mb-2">
+              <button type="button" class="btn btn-primary w-100">CHECK OUT</button>
+            </div>
+            <div class="pending">
+              <button type="button" class="btn btn-warning w-100">PENDING</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>

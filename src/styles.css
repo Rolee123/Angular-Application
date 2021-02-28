@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background: #ececec;
+}
+
+.header {
+    height: 10vh;
+}
+
+.body {
+    height: 90vh;
+}
+
+.footer-container {
+    height: 8vh;
+}

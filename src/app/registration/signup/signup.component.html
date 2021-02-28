@@ -1,0 +1,32 @@
+<div class="sign-up text-center" [formGroup]="signupForm">
+  <div class="row mx-0 p-2">
+    <div class="col-12">
+      <span>SignUp</span>
+    </div>
+  </div>
+  <div class="row mx-0 p-2">
+    <div class="col-12">
+      <input type="text" placeholder="First Name" formControlName="fistName"/>
+    </div>
+  </div>
+  <div class="row mx-0 p-2">
+    <div class="col-12">
+      <input type="text" placeholder="Last Name" formControlName="lastName"/>
+    </div>
+  </div>
+  <div class="row mx-0 p-2">
+    <div class="col-12">
+      <input type="text" placeholder="Email" formControlName="email"/>
+    </div>
+  </div>
+  <div class="row mx-0 p-2">
+    <div class="col-12">
+      <input type="text" placeholder="Password" formControlName="password"/>
+    </div>
+  </div>
+  <div class="row mx-0 p-2">
+    <div class="col-12">
+      <button type="button" class="btn btn-primary" (click)="submit()">Submit</button>
+    </div>
+  </div>
+</div>
