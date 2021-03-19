@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Product } from 'src/model/product.model';
 import * as products from 'src/json/product_list.json';
 import { Carts } from 'src/model/carts.model';
+import { PrimeNGConfig } from 'primeng/api';
  
 @Component({
   selector: 'app-new-order',
@@ -17,7 +18,7 @@ export class NewOrderComponent implements OnInit {
   public total: number = 0;
 
   constructor(
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
   ) { }
 
   ngOnInit(): void {
@@ -79,5 +80,22 @@ export class NewOrderComponent implements OnInit {
     this.subtotal = Number(this.subtotal.toFixed(2));
     this.tax = Number(this.tax.toFixed(2));
     this.total = Number((this.subtotal + this.tax).toFixed(2));
+  }
+
+  public checkout = () => {
+     var message;
+
+		if (confirm("Pay Bill?") == true) {
+			message = "Pay Bill!";
+		} else {
+			message = "Canceled!";
+		}
+
+		document.getElementById("msg").innerHTML = message; 
+
+    if(message == "Pay Bill") {
+    
+    }
+
   }
 }

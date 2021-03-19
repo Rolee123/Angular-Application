@@ -3,7 +3,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <a class="navbar-brand" href="#">E-Commerce</a>
+      <p-button type="button" (click)="visibleSidebar = true" icon="pi pi-arrow-right"></p-button>
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item active">
           <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
@@ -21,3 +21,30 @@
       </form>
     </div>
   </nav>
+
+  <!-- sidebar -->
+  <p-sidebar [(visible)]="visibleSidebar" [baseZIndex]="10000" [style]="{backgroundColor:'antiquewhite'}">
+    <h1 style="font-weight:normal">E-Commerce</h1>
+    <ul style="padding: 0px;">
+      <li class="pi pi-home d-block mb-3" (click)="this.navigateTo('customer')">
+        <span style="padding-left: 20px; font-size: larger;">Dasboard</span>
+      </li>
+      <li class="pi pi-users d-block mb-3">
+        <span style="padding-left: 20px;font-size: larger">Customers</span>
+      </li>
+      <li class="pi pi-home d-block mb-3">
+        <span style="padding-left: 20px;font-size: larger">Items</span>
+      </li>
+      <li class="pi pi-home d-block mb-3">
+        <span style="padding-left: 20px;font-size: larger">ItemsKit</span>
+      </li>
+      <li class="pi pi-home d-block mb-3">
+        <span style="padding-left: 20px;font-size: larger">GiftCart</span>
+      </li>
+      <li class="pi pi-home d-block mb-3">
+        <span style="padding-left: 20px;font-size: larger">LogOut</span>
+      </li>
+    
+    </ul>
+    
+</p-sidebar>

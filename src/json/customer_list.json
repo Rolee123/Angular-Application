@@ -1,0 +1,23 @@
+[
+    {
+        "customer_id": "1",
+        "customer_name": "rolee",
+        "customer_mail": "rolee11",
+        "customer_phone": 1,
+        "customer_review": "2"
+    },
+    {
+        "customer_id": "2",
+        "customer_name": "rolee",
+        "customer_mail": "rolee11",
+        "customer_phone": 1,
+        "customer_review": "2"
+    },
+    {
+        "customer_id": "3",
+        "customer_name": "rolee",
+        "customer_mail": "rolee11",
+        "customer_phone": 1,
+        "customer_review": "2"
+    }
+]
